@@ -131,19 +131,22 @@ class Queue {
     return this.first
   }
 
-  getLast(){
+  getLast() {
     return this.last;
   }
 
   findMax() {
-    let arr = [];
-    let node = this.first
-    while(node) {
-      arr.push(node.data)
+    let node = this.first;
+    let max = 0;
+    while(node){
+      if(node.data  > max){
+        max = node.data;
+      }
       node = node.next
     }
-    return Math.max(...arr)
+    return max
   }
+
 }
 
 
